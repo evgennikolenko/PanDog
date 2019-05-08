@@ -1,0 +1,157 @@
+.userRoom {
+    width: 100%;
+    height: auto;
+    background: #e9e9e9;
+    margin-top: -5px;
+    .userRoom__wrapper {
+        @include containerMargin();
+        .userRoom__left {
+            min-width: 300px;
+            height: auto;
+            padding: 35px;
+            display: inline-block;
+            & img {
+                width: 150px;
+                height: 150px;
+                display: block;
+                margin: auto;
+            }
+            .userRoom__login {
+                padding-top: 15px;
+                text-align: center;
+                font: $basic-title-font;
+                color: #000000;
+            }
+        }
+        .userRoom__right {
+            width: 70%;
+            height: auto;
+            display: inline-block;
+            vertical-align: top;
+            .userRoom__userName {
+                height: auto;
+                padding: 25px;
+                padding-bottom: 5px;
+                text-align: center;
+                font: $lora;
+                font-size: 25px;
+                color: #000000;
+            }
+            .userRoom__email {
+                height: auto;
+                padding: 0 15px;
+                text-align: center;
+                font: $basic-font;
+                font-size: 18px;
+                color: hsl(0, 1%, 33%);
+                &::after {
+                    display: block;
+                    content: '';
+                    width: 170px;
+                    height: 2px;
+                    margin: 30px auto 0;
+                    background: black;
+                }
+            }
+            .userRoom__orders {
+                width: 100%;
+                height: auto;
+                padding: 35px;
+                & h3 {
+                    height: auto;
+                    padding-bottom: 5px;
+                    text-align: center;
+                    font: $lora;
+                    font-size: 25px;
+                    color: #000000;
+                }
+                .orders__inner {
+                    margin-bottom: 15px;
+                    border: 1px solid #6d6d6d;
+                    background: #ffffff;
+                    &:hover {
+                        -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+                        -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+                        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+                    }
+                    & ul {
+                        width: 60%;
+                        display: block;
+                        margin: auto;
+                        height: auto;
+                        & li {
+                            list-style: none;
+                            padding: 15px;
+                            height: 60px;
+                            height: auto;
+                            & img {
+                                margin-top: -14px;
+                            }
+                            & span {
+                                vertical-align: top;
+                                height: auto;
+                                padding: 0 15px;
+                                font: $basic-title-font;
+                                font-size: 18px;
+                            }
+                            .order__id {
+                                font: $basic-font;
+                                font-size: 16px;
+                                color: rgb(80, 80, 80);
+                            }
+                            .order__cost {
+                                font: $underdog;
+                                font-size: 20px;
+                                color: rgb(112, 37, 37);
+                            }
+                        }
+                    }
+                }
+                .order__totalcost {
+                    text-align: center;
+                    font: $lora;
+                    font-size: 18px;
+                }
+                &::after {
+                    display: block;
+                    content: '';
+                    width: 170px;
+                    height: 2px;
+                    margin: 30px auto 0;
+                    background: black;
+                }
+            }
+            .userRoom__subjects {
+                & h3 {
+                    height: auto;
+                    padding-bottom: 5px;
+                    text-align: center;
+                    font: $lora;
+                    font-size: 25px;
+                    color: #000000;
+                }
+                & ul {
+                    width: 60%;
+                    display: block;
+                    margin: auto;
+                    & li {
+                        padding: 15px;
+                        height: 60px;
+                        & a {
+                            height: auto;
+                            display: block;
+                            padding: 0 15px;
+                            font: $nav-font;
+                            font-size: 20px;
+                            color: #0b1946;
+                            &:hover {
+                                cursor: pointer;
+                                color: #3f0505
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

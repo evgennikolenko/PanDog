@@ -1,0 +1,74 @@
+<div class="clearfix"></div>
+<div class="checkout">
+    <div class="checkout__wrapper">
+        <div class="checkout__header">
+            <div class="clearfix"></div>
+            <div class="checkout__title">
+                <div class="checkout__image"></div>
+                <p>Checkout</p>
+            </div>
+            <div class="checkout__costorder">
+                <p>Cost order: {{(cart | async).grossTotal}} $</p>
+            </div>
+            <div class="checkout__confirm">
+                <!--<a (click)='setOrders(cartItems)' routerLink='/store/product/animals'>Confirm purchase:</a>-->
+                <a (click)='this.setOrders()'>Confirm purchase:</a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="checkout__body">
+
+            <div class="checkout__orders">
+                <div class="checkout__orders-block" *ngFor="let item of cartItems.items">
+                    <div class="orders__delete">
+                        <a (click)='deleteOrder(item.product)'></a>
+                    </div>
+                    <div class="orders-block__image">
+                        <img src="{{item.product.src}}" class="checkout__animal_image" />
+                    </div>
+                    <div class="orders-block__text">
+                        <span># {{item.product.id}}</span>
+                        <span class="text--bold js-product-name"><b>Type:</b> {{item.product.type}}</span>
+                        <span class="text--bold js-product-name"><b>Breed:</b> {{item.product.breed}}</span>
+                        <p class="js-product-desc">{{item.product.desc}}</p>
+                    </div>
+                    <div class="orders-block__quantity">
+                        <p>{{item.quantity}} x {{item.product.cost}} $</p>
+                    </div>
+                </div>
+            </div>
+            <div class="checkout__delivery">
+                <h1 class="delivery__header">Delivery</h1>
+                <div class="delivery__block">
+                    <input #delivery1 type="radio" name="delivery" value="0" (click)='setDeliveryOption(delivery1)' checked>
+                    <label for="delivery1">delivery1</label>
+                    <p class="delivery__cost">{{delivery1.value}} $</p>
+                    <p>subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe
+                    </p>
+                </div>
+                <div class="delivery__block">
+                    <input #delivery2 type="radio" name="delivery" value="50" (click)='setDeliveryOption(delivery2)'>
+                    <label for="delivery2">delivery2</label>
+                    <p class="delivery__cost">{{delivery2.value}} $</p>
+                    <p>subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe
+
+                </div>
+
+                <div class="delivery__block">
+                    <input #delivery3 type="radio" name="delivery" value="75" (click)='setDeliveryOption(delivery3)'>
+                    <label for="delivery3">delivery3</label>
+                    <p class="delivery__cost">{{delivery3.value}} $</p>
+                    <p>subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe
+                </div>
+
+                <div class="delivery__block">
+                    <input #delivery4 type="radio" name="delivery" value="75" (click)='setDeliveryOption(delivery4)'>
+                    <label for="delivery4">delivery4</label>
+                    <p class="delivery__cost">{{delivery4.value}} $</p>
+                    <p>subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe subscribe
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

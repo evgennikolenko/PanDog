@@ -1,0 +1,97 @@
+.product {
+    width: 100%;
+    min-height: 350px;
+    .product__wrapper {
+        @include containerMargin();
+        height: inherit;
+        .product__left-sections {
+            width: 50%;
+            height: 500px;
+            padding-top: 50px;
+            float: left;
+            @include screen($phone, $tablet) {
+                float: none;
+                margin: auto;
+                width: 70%;
+            }
+            @include max-screen($phone) {
+                float: none;
+                margin: auto;
+                width: 100%
+            }
+            .product__blockInLeft {
+                width: 270px;
+                height: auto;
+                padding-bottom: 10px;
+                display: block;
+                margin: auto;
+                .blockInLeft__image {
+                    width: 215px;
+                    height: 200px;
+                    margin: auto;
+                    border: 3px solid black;
+                    border-radius: 100%;
+                    overflow: hidden;
+                    & img {
+                        width: 100%;
+                        height: inherit;
+                    }
+                }
+                .blockInLeft__text {
+                    width: 215px;
+                    height: auto;
+                    margin: auto;
+                    font-family: 'underdog', sans-serif;
+                    margin-top: 10px;
+                    font-size: 16px;
+                    padding-left: 10px;
+                    text-align: justify;
+                }
+            }
+        }
+        .product__right-sections {
+            width: 49%;
+            height: 500px;
+            float: right;
+            padding-top: 50px;
+            @include screen($phone, $tablet) {
+                float: none;
+                margin: auto;
+                width: 70%;
+            }
+            @include max-screen($phone) {
+                float: none;
+                margin: auto;
+                width: 100%
+            }
+            .product__blockInRight {
+                width: 270px;
+                height: auto;
+                padding-bottom: 10px;
+                display: block;
+                margin: auto;
+                .blockInRight__image {
+                    width: 215px;
+                    height: 200px;
+                    margin: auto;
+                    border: 3px solid black;
+                    border-radius: 100%;
+                    overflow: hidden;
+                    & img {
+                        width: 100%;
+                        height: inherit;
+                    }
+                }
+                .blockInRight__text {
+                    width: 215px;
+                    height: auto;
+                    margin: auto;
+                    font-family: 'underdog', sans-serif;
+                    margin-top: 10px;
+                    font-size: 16px;
+                    padding-left: 10px;
+                }
+            }
+        }
+    }
+}

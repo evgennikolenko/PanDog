@@ -1,0 +1,70 @@
+<h1 class="forum-component__title"> Pan Dog Forum</h1>
+
+
+<div class="forum">
+    <div class="forum__wrapper">
+        <div class="create__subject modal-trigger" data-modal="modal-name">
+            <img src="../../../../assets/image/pandogpl/createSub.png" alt="create sub">
+            <p>Create new subject</p>
+        </div>
+
+        <div class="forum__undertable">
+            <p>Themes {{subjectCount}}</p>
+        </div>
+        <table class="forum__table">
+            <thead>
+                <tr class="forum__colum header__colum">
+                    <th class="thead__theme" colspan="2">Theme</th>
+                    <th class="thead__answers">Answers</th>
+                    <th class="thead__lastans">Last answer</th>
+
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="forum__colum" *ngFor='let sub of subjects'>
+                    <td class="forum__icon" style="width:5%">
+                        <img src="../../../../assets/image/pandogpl/ficon.png" alt="subject image">
+                    </td>
+                    <td class="forum__title">
+                        <a class="title__subjectName" [routerLink]="['/store/forum/', sub._id]">
+                            <p>{{sub.subjectName}} {{sub._id}}</p>
+                        </a>
+                        <div class="title__authorLogin">{{sub.authorLogin}}</div>
+                    </td>
+                    <!-- <td class="forum__countMessages">{{getLastMessage(sub.id).length}}</td>
+                    <td class="forum__lastMessage" *ngFor='let message of getLastMessage(sub.id) | slice:getLastMessage(sub.id).length-1:sub.getLastMessage(sub.id).length'>
+                        <div class="lastMessage__date">{{message.date}}</div>
+                        <div class="lastMessage__authorLogin">{{message.authorLogin}}</div>
+                    </td> -->
+
+                </tr>
+                <!--<span class="forum__colum" *ngFor='let page of pages'>page</span>-->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal. Create subject -->
+<div class="modal" id="modal-name">
+    <div class="modal-sandbox"></div>
+    <div class="modal-box">
+        <div class="modal-header">
+            <div class="close-modal">&#10006;</div>
+            <h1>Create new subject</h1>
+        </div>
+        <div class="modal-body">
+            <form novalidate #f="ngForm" (ngSubmit)='createSubject(f)'>
+                <label for="createsub">Enter subject name</label>
+                <textarea [(ngModel)]="newSubject.subjectName" name="createsub" required></textarea>
+
+                <div class="but__inner">
+                    <button class="submit__sub" type="submit">Create</button>
+                    <button class="close-modal-b">Close!</button></div>
+
+            </form>
+            <br />
+
+        </div>
+    </div>
+</div>

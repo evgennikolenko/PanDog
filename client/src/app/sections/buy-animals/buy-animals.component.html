@@ -1,0 +1,77 @@
+<section class="animals">
+    <div class="animals__wrapper">
+
+        <div class="animals__header">
+            <img src="./../../../assets/image/product/printH.png">
+            <h2>Animals</h2>
+        </div>
+
+        <div class="animals__toolbar">
+            <filter-animals [breedsSet]="breedsSet"></filter-animals>
+        </div>
+
+        <div class="animals__layout">
+            <div class="animals__nav">
+                <div class="select__orderBy">
+                    <select name="slct" id="slct" [(ngModel)]='order'>
+                            <option value="">Select</option>
+                            <option value="cost">Cost</option>
+                            <option value="type">Type</option>
+                    </select>
+                </div>
+
+                <div class="orderBy__buttons">
+                    <div class="orderBy__ascendingT" (click)='ascending=true'></div>
+                    <div class="orderBy__ascendingF" (click)='ascending=false'></div>
+
+                </div>
+
+                <div class="select__productsPerPage">
+                    <select name="slct" id="slct" [value]="productsPerPage" [(ngModel)]='productsPerPage' (change)='changePageSize(productsPerPage)'>
+                                <option value="8">8 per Page</option>
+                                <option value="16">16 per Page</option>
+                                <option value="32">32 per Page</option>
+                                <option value="50">50 per Page</option>
+                        </select>
+                </div>
+
+                <div class="page-btn-group">
+                    <button *counter="let page of countPages" (click)="changePage(page)" class="btn btn-outline-primary" [class.active]="page == selectedPage">
+                            {{page}}
+                    </button>
+                </div>
+            </div>
+
+            <div class="animals__grid">
+                <div class="animals__card" *ngFor="let item of animals | orderBy:order:ascending">
+                    <div class="animals-card__image ">
+                        <img src="{{item.src}} " alt={{item.type}}>
+                    </div>
+
+                    <div class="animals__discount" *ngIf='item.discount'>
+                        <p>{{item.discount}}%</p>
+                    </div>
+                    <div class="animals-card__type "><b>Type:</b> {{item.type}}</div>
+                    <div class="animals-card__breed "><b>Breed:</b> {{item.breed}}</div>
+                    <div class="animals-card__cost ">{{item.cost | number:'1.2-2' }} $</div>
+                    <div class="animals-card__footer ">
+                        <div class="animals-card__like ">
+
+                        </div>
+                        <div class="animals-card__info ">
+                            <a [routerLink]="['/store/product/animals', item.id]" class="btn animals-card__infobnt ">
+                                <div>i</div>
+                            </a>
+                        </div>
+                        <div class="animals-card__buy ">
+                            <a class="btn animals-card__buybnt " (click)='addProductToCart(item)'>
+                                <div class="btn__cart "></div>
+                                <p>BUY</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

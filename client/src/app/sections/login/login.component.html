@@ -1,0 +1,53 @@
+<div class="login-layout">
+    <div class="login-layout__wrapper">
+        <!-- left side in component -->
+        <div class="login-layout__left-side">
+            <div class="login-layout__reg-block">
+                <div class="reg-block__header">New client</div>
+                <div class="reg-block__body"><span>Registration</span><br> Account creation will help you make purchases, monitor the status of orders, look at the history of orders, visit your personal account. You will also have access to the Pan Dog + platform, where you can use
+                    the chat and forum.
+                </div>
+                <div class="reg-block__footer">
+                    <button routerLink='/registration' class="btn reg-block__button">Registration</button>
+                </div>
+            </div>
+        </div>
+        <!-- ********************** -->
+
+        <!-- right side in component -->
+        <div class="login-layout__right-side">
+            <div class="login-layout__reg-block">
+                <div class="login-block__header">Registered user</div>
+                <div class="login-block__body">
+                    <form #f="ngForm" novalidate (ngSubmit)="login(f)" class="login-form">
+                        <div class="login-form__form-group">
+                            <label class="field field_animated field_a1 page__field">
+                                <input type='text' [(ngModel)]="loginForm.email" class="field__input" name='email' placeholder="example@gmai.com" required>
+                                                            <span class="field__label-wrap">
+                                                              <span class="field__label">Enter your name: </span>
+                                                            </span>
+                                                            </label>
+                        </div>
+                        <div class="login-form__form-group">
+
+
+                            <label class="field field_animated field_a1 page__field">
+                                                                <input type='password' [(ngModel)]="loginForm.password" name="password" class="field__input" placeholder="*******" required>
+                                                                <span class="field__label-wrap">
+                                                                  <span class="field__label">Enter your password: </span>
+                                                                </span>
+                                                                </label>
+                        </div>
+                        <div class="login-block__footer">
+                            <button type="submit" [disabled]="f.invalid || isSubmittet" class="btn login-block__button">Enter</button>
+                        </div>
+                    </form>
+                    {{error}}
+                </div>
+
+            </div>
+
+        </div>
+        <!-- ********************** -->
+    </div>
+</div>

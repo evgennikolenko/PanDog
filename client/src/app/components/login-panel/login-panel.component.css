@@ -1,0 +1,97 @@
+.login-panel {
+  width: 100%;
+  height: 100%;
+}
+
+.login-panel .login-panel__buttons {
+  width: inherit;
+  height: inherit;
+}
+
+.login-panel .login-panel__buttons .login-panel__blogin {
+  display: inline-block;
+  width: 60px;
+  height: inherit;
+  text-align: right;
+}
+
+.login-panel .login-panel__buttons .login-panel__blogin a {
+  font-family: 'Underdog', cursive;
+  display: inline-flex;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+  width: 60px;
+}
+
+.login-panel .login-panel__buttons .login-panel__blogin a:hover {
+  text-decoration: underline;
+}
+
+.login-panel .login-panel__buttons .login-panel__bregistration {
+  display: inline-block;
+  width: 150px;
+  height: inherit;
+}
+
+.login-panel .login-panel__buttons .login-panel__bregistration a {
+  font-family: 'Underdog', cursive;
+  display: inline-flex;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+  width: 120px;
+  padding-left: 10px;
+  border-left: 2px solid #ffffff;
+}
+
+.login-panel .login-panel__buttons .login-panel__bregistration a:hover {
+  text-decoration: underline;
+}
+
+.login-panel .login-panel__main {
+  width: inherit;
+  height: inherit;
+}
+
+.login-panel .login-panel__main .login-panel__user {
+  display: inline-block;
+  width: auto;
+  height: inherit;
+  text-align: right;
+}
+
+.login-panel .login-panel__main .login-panel__user p {
+  font-family: 'Underdog', cursive;
+  display: inline-flex;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+  width: auto;
+}
+
+.login-panel .login-panel__main .login-panel__user p:hover {
+  text-decoration: underline;
+}
+
+.login-panel .login-panel__main .exit__button {
+  display: inline-block;
+  width: 150px;
+  height: inherit;
+}
+
+.login-panel .login-panel__main .exit__button a {
+  font-family: 'Underdog', cursive;
+  display: inline-flex;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+  width: 120px;
+  padding-left: 10px;
+  border-left: 2px solid #ffffff;
+}
+
+.login-panel .login-panel__main .exit__button a:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=login-panel.component.css.map */

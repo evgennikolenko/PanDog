@@ -1,0 +1,291 @@
+    .subject {
+        width: 100%;
+        height: auto;
+        position: relative;
+        .subject__wrapper {
+            @include containerMargin();
+            .subject__header {
+                height: 165px;
+                padding: 35px;
+                & img {
+                    display: inline-block;
+                    width: 150px;
+                    height: 90px;
+                }
+                .back__arrow {
+                    position: fixed;
+                    left: 0;
+                    top: 195px;
+                    width: 100px;
+                    height: 50px;
+                    background: url(./assets/image/pandogpl/backarrow.png) no-repeat;
+                    background-size: contain;
+                    cursor: pointer;
+                    @include max-screen($phone) {
+                        display: none;
+                    }
+                }
+                .subject__header-info {
+                    display: inline-block;
+                    height: 90px;
+                    vertical-align: top;
+                    padding: 12px;
+                    & h1 {
+                        height: auto;
+                        font: $lora;
+                        font-size: 26px;
+                        color: #000;
+                        padding: 10px;
+                        @include max-screen($phone) {
+                            font-size: 20px;
+                        }
+                    }
+                    & h5 {
+                        font: $basic-font;
+                        font-size: 17px;
+                        color: #5e5959;
+                        height: auto;
+                        padding-left: 10px;
+                        @include max-screen($phone) {
+                            font-size: 15px;
+                        }
+                    }
+                }
+                .message__create {
+                    float: right;
+                    margin-top: 65px;
+                    width: 180px;
+                    border-radius: 12px;
+                    vertical-align: top;
+                    background: #449d44;
+                    font: $nav-font;
+                    font-size: 25px;
+                    &:hover {
+                        background: #52b152;
+                    }
+                }
+            }
+            .upperblock__messages {
+                padding: 9px 10px 5px;
+                margin-top: 10px;
+                background: #678aad;
+                & p {
+                    font: $basic-font;
+                    font-size: 16px;
+                    color: #ffffff;
+                }
+            }
+            .messages__block {
+                background: #ebf0f3;
+                padding: 25px 0;
+                .messages__card {
+                    width: 90%;
+                    height: auto;
+                    margin: 0 auto 25px;
+                    -webkit-box-shadow: 0px 2px 5px 0px rgba(171, 171, 171, 1);
+                    -moz-box-shadow: 0px 2px 5px 0px rgba(171, 171, 171, 1);
+                    box-shadow: 0px 2px 5px 0px rgba(171, 171, 171, 1);
+                    background: #ffffff;
+                    .messages__header {
+                        width: 100%;
+                        height: 40px;
+                        background: #d8dde8;
+                        .message__author {
+                            float: left;
+                            font: $basic-font;
+                            font-size: 17px;
+                            color: #3235ee;
+                            padding: 10px;
+                        }
+                        .message__number {
+                            float: right;
+                            font: $basic-font;
+                            font-size: 14px;
+                            color: #747475;
+                            padding: 10px;
+                        }
+                    }
+                    .messages__body {
+                        .messages__left-block {
+                            display: inline-block;
+                            width: 140px;
+                            height: 140px;
+                            padding: 10px;
+                            .message__avatar-inner {
+                                margin: auto;
+                                width: 120px;
+                                height: 120px;
+                                border: 2px solid black;
+                                border-radius: 50%;
+                                overflow: hidden;
+                                & img {
+                                    width: 100%;
+                                    height: 100%;
+                                }
+                            }
+                        }
+                        .messages__right-block {
+                            display: inline-block;
+                            vertical-align: top;
+                            width: 70%;
+                            height: auto;
+                            margin: auto;
+                            .message__date {
+                                font: $nav-font;
+                                font-size: 16px;
+                                color: #747475;
+                                padding-left: 5px 25px 0;
+                                @include max-screen($phone) {
+                                    font-size: 15px;
+                                }
+                            }
+                            .message__text {
+                                font: $basic-font;
+                                font-size: 16px;
+                                color: #000000;
+                                text-align: justify;
+                                line-height: 1.4;
+                                padding: 25px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /**********************************/
+    
+    .modal,
+    .modal-box {
+        z-index: 900;
+    }
+    
+    .modal-sandbox {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: transparent;
+    }
+    
+    .modal {
+        display: none;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, .8);
+        overflow: auto;
+    }
+    
+    .modal-box {
+        position: relative;
+        width: 40%;
+        max-width: 350px;
+        margin: 100px auto;
+        animation-name: modalbox;
+        animation-duration: .3s;
+        animation-timing-function: ease-out;
+    }
+    
+    .modal-header {
+        padding: 15px 40px;
+        background: #546E7A;
+        color: #ffffff;
+        font: $lora;
+        font-size: 20px;
+    }
+    
+    .modal-body {
+        background: #ECEFF1;
+        padding: 15px 40px;
+        form {
+            width: 100%;
+            & label {
+                display: block;
+                text-align: center;
+                margin-bottom: 10px;
+                font: $basic-font;
+                color: #000000;
+            }
+            & textarea {
+                min-width: 200px;
+                display: block;
+                margin: auto;
+                height: auto;
+                font: $basic-font;
+                padding: 5px;
+            }
+            .but__inner {
+                width: 200px;
+                height: 70px;
+                padding: 15px;
+                margin-top: 10px;
+                margin: auto;
+                .close-modal-b {
+                    display: inline-block;
+                    padding: 6px 12px;
+                    margin-bottom: 0;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 1.42857143;
+                    text-align: center;
+                    white-space: nowrap;
+                    vertical-align: middle;
+                    -ms-touch-action: manipulation;
+                    touch-action: manipulation;
+                    cursor: pointer;
+                    -webkit-user-select: none;
+                    -moz-user-select: none;
+                    -ms-user-select: none;
+                    user-select: none;
+                    background-image: none;
+                    border: 1px solid transparent;
+                    border-radius: 4px;
+                    background: #d3c82a;
+                    font: $nav-font;
+                    &:hover {
+                        border: 1px solid #000000;
+                    }
+                }
+                .submit__sub {
+                    @extend .close-modal-b;
+                    background: #449d44;
+                    font: $nav-font;
+                    &:hover {
+                        border: 1px solid #000000;
+                    }
+                }
+            }
+        }
+    }
+    
+    .close-modal {
+        text-align: right;
+        cursor: pointer;
+    }
+    
+    @-webkit-keyframes modalbox {
+        0% {
+            top: -250px;
+            opacity: 0;
+        }
+        100% {
+            top: 0;
+            opacity: 1;
+        }
+    }
+    
+    @keyframes modalbox {
+        0% {
+            top: -250px;
+            opacity: 0;
+        }
+        100% {
+            top: 0;
+            opacity: 1;
+        }
+    }

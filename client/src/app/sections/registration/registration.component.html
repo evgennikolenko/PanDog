@@ -1,0 +1,133 @@
+<!--Registration component-->
+<div class="registration-form">
+
+    <div class="registration-form__wrapper">
+        <form class="registration-form__form" [formGroup]='RegistrationForm' (ngSubmit)='submitForm(RegistrationForm)'>
+            <!--*********************************************************-->
+            <!--*********************************************************-->
+            <!--*********************************************************-->
+            <fieldset class="fieldset__registration">
+                <legend class="fieldset__registrationLegend ">Registration</legend>
+
+                <!--Поле Персональные данные/-->
+                <fieldset class="fieldset__all">
+                    <legend class="personalLegend ">Персональные данные</legend>
+
+                    <div class="form-blocks" *ngFor="let control of regControls | slice:0:4; let i = index">
+                        <div class="input__label">
+                            <p class="registration__titlefilds">{{control.label}}</p>
+                        </div>
+
+                        <div class="input__inner">
+                            <div class="input-elem__wrapper">
+                                <input type="text" formControlName='{{control.property}}' class="registration__input " id="i_name">
+                            </div>
+                            <ul class="input-elem__text-danger" *ngIf="(formSubmitted || control.dirty) && control.invalid">
+                                <li *ngFor="let error of control.getValidationMessages()">
+                                    {{error}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!--*********************************************************-->
+                <!--*********************************************************-->
+                <!--*********************************************************-->
+                <fieldset class="fieldset__all">
+                    <legend class="personalLegend ">Контактные данные</legend>
+
+
+                    <!--Страна проживания/-->
+                    <div class="form-blocks">
+                        <div class="input__label">
+                            <p class="registration__titlefilds">Country</p>
+                        </div>
+
+                        <div class="input__inner">
+                            <input type="text" id="country" />
+                            <input type="hidden" id="country_code" formControlName='country' />
+                        </div>
+                    </div>
+                    <!--/Страна проживания-->
+
+
+                    <div class="form-blocks" *ngFor="let control of regControls | slice:5:8;">
+                        <div class="input__label">
+                            <p class="registration__titlefilds">{{control.label}}</p>
+                        </div>
+
+                        <div class="input__inner">
+                            <div class="input-elem__wrapper">
+                                <input type="text" formControlName='{{control.property}}' class="registration__input " id="i_name">
+                            </div>
+                            <ul class="input-elem__text-danger" *ngIf="(formSubmitted || control.dirty) && control.invalid">
+                                <li *ngFor="let error of control.getValidationMessages()">
+                                    {{error}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </fieldset>
+
+                <!--*********************************************************-->
+                <!--*********************************************************-->
+                <!--*********************************************************-->
+                <fieldset class="fieldset__all">
+                    <legend class="personalLegend ">Логин и пароль</legend>
+
+
+                    <div class="form-blocks" *ngFor="let control of regControls | slice:8:11">
+                        <div class="input__label">
+                            <p class="registration__titlefilds">{{control.label}}</p>
+                        </div>
+
+                        <div class="input__inner">
+                            <div class="input-elem__wrapper">
+                                <input type="text" formControlName='{{control.property}}' class="registration__input " id="i_name">
+                            </div>
+                            <ul class="input-elem__text-danger" *ngIf="(formSubmitted || control.dirty) && control.invalid">
+                                <li *ngFor="let error of control.getValidationMessages()">
+                                    {{error}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="form-blocks" *ngFor="let control of regControls | slice:11:12">
+                        <div class="input__label">
+                            <p class="registration__titlefilds">{{control.label}}</p>
+                        </div>
+
+                        <div class="input__inner">
+                            <div class="input-elem__wrapper"> -->
+                    <!-- #file (change)="onChange(file.files)" -->
+                    <!-- <input type="file" formControlName='{{control.property}}' class="registration__photo " id="i_name" multiple accept="image/*,image/jpeg">
+                            </div>
+                            <ul class="input-elem__text-danger" *ngIf="(formSubmitted || control.dirty) && control.invalid">
+                                <li *ngFor="let error of control.getValidationMessages()">
+                                    {{error}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div> -->
+                </fieldset>
+                <!--*********************************************************-->
+                <!--*********************************************************-->
+                <!--*********************************************************-->
+
+                <!--buttons-->
+                <input [disabled]='formSubmitted && RegistrationForm.invalid' type="submit" value="Регистриция" class="registration__button">
+                <input type="reset" value="Сбросить" class="reset__button">
+            </fieldset>
+
+            <!--*********************************************************-->
+            <!--*********************************************************-->
+            <!--*********************************************************-->
+        </form>
+        {{RegistrationForm.value | json}} {{RegistrationForm.status}} {{httpUser | json}}
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<nav role='navigation' class="main-nav" id="main-nav">
+
+    <a routerLink='/store/about' class="link__item" routerLinkActive='main-nav-item__active'>Our store </a>
+    <a class="link__item" routerLink='/store/news' routerLinkActive='main-nav-item__active'>News</a>
+    <a class="link__item" routerLink='/store/product' routerLinkActive='main-nav-item__active'>Product</a>
+    <a *ngIf='!isAuth' class="link__item" routerLink='/store/registration' routerLinkActive='main-nav-item__active'>Registration</a>
+    <a *ngIf='isAuth' class="link__item" routerLink='/store/user-room' routerLinkActive='main-nav-item__active'>My Room</a>
+    <a class="link__item" routerLink='/store/service' routerLinkActive='main-nav-item__active'>Pan Dog+</a>
+
+</nav>

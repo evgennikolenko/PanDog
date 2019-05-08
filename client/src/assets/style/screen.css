@@ -1,0 +1,171 @@
+@font-face {
+  font-family: "Underdog";
+  font-weight: normal;
+  font-style: normal;
+  /* IE9 Compat Modes */
+  src: url("src/assets/fonts/Underdog/Underdog.eot");
+  /* IE6-IE8 */
+  src: url("src/assets/fonts/Underdog/Underdog.eot?#iefix") format("embedded-opentype"), url("src/assets/fonts/Underdog/Underdog.woff") format("woff"), url("src/assets/fonts/Underdog/Underdog.ttf") format("truetype"), url("src/assets/fonts/Underdog/Underdog.svg") format("svg");
+}
+
+@font-face {
+  font-family: "RuslanDisplay";
+  font-weight: normal;
+  font-style: normal;
+  /* IE9 Compat Modes */
+  src: url("src/assets/fonts/RuslanDisplay/RuslanDisplay.eot");
+  /* IE6-IE8 */
+  src: url("src/assets/fonts/RuslanDisplay/RuslanDisplay.eot?#iefix") format("embedded-opentype"), url("src/assets/fonts/RuslanDisplay/RuslanDisplay.woff") format("woff"), url("src/assets/fonts/RuslanDisplay/RuslanDisplay.ttf") format("truetype"), url("src/assets/fonts/RuslanDisplay/RuslanDisplay.svg") format("svg");
+}
+
+@font-face {
+  font-family: "MarckScript";
+  font-weight: normal;
+  font-style: normal;
+  /* IE9 Compat Modes */
+  src: url("src/assets/fonts/MarckScript/MarckScript.eot");
+  /* IE6-IE8 */
+  src: url("src/assets/fonts/MarckScript/MarckScript.eot?#iefix") format("embedded-opentype"), url("src/assets/fonts/MarckScript/MarckScript.woff") format("woff"), url("src/assets/fonts/MarckScript/MarckScript.ttf") format("truetype"), url("src/assets/fonts/MarckScript/MarckScript.svg") format("svg");
+}
+
+@font-face {
+  font-family: "HelveticaNeueCyrBold";
+  font-weight: normal;
+  font-style: normal;
+  /* IE9 Compat Modes */
+  src: url("src/assets/fonts/HelveticaNeueCyr-Bold/HelveticaNeueCyr-Bold.eot");
+  /* IE6-IE8 */
+  src: url("src/assets/fonts/HelveticaNeueCyr-Bold/HelveticaNeueCyr-Bold.eot?#iefix") format("embedded-opentype"), url("src/assets/fonts/HelveticaNeueCyr-Bold/HelveticaNeueCyr-Bold.woff") format("woff"), url("src/assets/fonts/HelveticaNeueCyr-Bold/HelveticaNeueCyr-Bold.ttf") format("truetype"), url("src/assets/fonts/HelveticaNeueCyr-Bold/HelveticaNeueCyr-Bold.svg") format("svg");
+}
+
+@font-face {
+  font-family: "HelveticaNeueCyrLight";
+  font-weight: normal;
+  font-style: normal;
+  /* IE9 Compat Modes */
+  src: url("src/assets/fonts/HelveticaNeueCyr-Light/HelveticaNeueCyr-Light.eot");
+  /* IE6-IE8 */
+  src: url("src/assets/fonts/HelveticaNeueCyr-Light/HelveticaNeueCyr-Light.eot?#iefix") format("embedded-opentype"), url("src/assets/fonts/HelveticaNeueCyr-Light/HelveticaNeueCyr-Light.woff") format("woff"), url("src/assets/fonts/HelveticaNeueCyr-Light/HelveticaNeueCyr-Light.ttf") format("truetype"), url("src/assets/fonts/HelveticaNeueCyr-Light/HelveticaNeueCyr-Light.svg") format("svg");
+}
+
+@font-face {
+  font-family: "HelveticaNeueCyrMedium";
+  font-weight: normal;
+  font-style: normal;
+  /* IE9 Compat Modes */
+  src: url("src/assets/fonts/HelveticaNeueCyr-Medium/HelveticaNeueCyr-Medium.eot");
+  /* IE6-IE8 */
+  src: url("src/assets/fonts/HelveticaNeueCyr-Medium/HelveticaNeueCyr-Medium.eot?#iefix") format("embedded-opentype"), url("src/assets/fonts/HelveticaNeueCyr-Medium/HelveticaNeueCyr-Medium.woff") format("woff"), url("src/assets/fonts/HelveticaNeueCyr-Medium/HelveticaNeueCyr-Medium.ttf") format("truetype"), url("src/assets/fonts/HelveticaNeueCyr-Medium/HelveticaNeueCyr-Medium.svg") format("svg");
+}
+
+h1 {
+  font-family: "HelveticaNeueCyr-Medium";
+}
+
+html {
+  min-height: 300px;
+  height: 1px;
+  /* Required to make the child 100% of the min-height */
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+@media only screen and (min-width: 1248px) {
+  * {
+    font-size: 16px;
+    color: #000000;
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1248px) {
+  * {
+    font-size: 16px;
+    color: red;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  * {
+    font-size: 16px;
+    color: blue;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 768px) {
+  * {
+    font-size: 15px;
+    color: yellow;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  * {
+    font-size: 15px;
+    color: rebeccapurple;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  outline: none;
+}
+
+button {
+  outline: none;
+}
+
+.menu {
+  list-style: none;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+a:not([href]) {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+/*# sourceMappingURL=screen.css.map */

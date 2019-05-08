@@ -1,0 +1,24 @@
+{
+  "name": "learning-nodejs-e-nikolenko",
+  "version": "1.0.0",
+  "description": "NodeJs demo project",
+  "main": "ecosystem.config.js",
+  "scripts": {
+    "start": "concurrently \"npm run npm-install-all\" \"npm run server\" \"npm run client\"",
+    "npm-install-all": "concurrently \"npm run server-npm-install\" \"npm run client-npm-install\"",
+    "server-npm-install": "concurrently \"cd server && npm install\"",
+    "client-npm-install": "concurrently \"cd client && npm install\"",
+    "server": "concurrently \"cd server && npm run server\"",
+    "client": "concurrently \"cd client && npm start \"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.aimprosoft.com/learning/learning-nodejs-e-nikolenko.git"
+  },
+  "author": "Yevhenii Nikolenko",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.1.0"
+  }
+}

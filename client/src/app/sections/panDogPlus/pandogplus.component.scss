@@ -1,0 +1,101 @@
+.pandogplus {
+    width: 100%;
+    height: auto;
+    margin-top: -5px;
+    background: #e0ebf1;
+    .pandogplus__wrapper {
+        @include containerMargin();
+        height: auto;
+        .pandogplus__title {
+            width: auto;
+            display: block;
+            text-align: center;
+            padding: 20px;
+            font: $lora;
+            &::after {
+                display: block;
+                content: '';
+                width: 170px;
+                height: 2px;
+                margin: 30px auto 0;
+                background: black;
+            }
+        }
+        .pandogplus__text {
+            line-height: 1.4;
+            font: $basic-font;
+            color: #000000;
+            text-align: center;
+        }
+        .pandogplus__forum {
+            width: 50%;
+            height: auto;
+            margin-top: 10px;
+            padding: 15px;
+            display: inline-block;
+            @include screen($phone, $tablet) {
+                display: block;
+                width: 100%;
+                margin: 30px auto 5px;
+            }
+            @include max-screen($phone) {
+                display: block;
+                width: 100%;
+                margin: 30px auto 0px;
+            }
+            .forum__link {
+                display: block;
+                width: 150px;
+                height: 50px;
+                border: 3px solid #1b95a0;
+                margin: 0 auto 20px;
+                text-align: center;
+                padding: 10px;
+                font: $nav-font;
+                font-size: 21px;
+                color: #1b95a0;
+                cursor: pointer;
+                &:hover {
+                    background: #1b95a0;
+                    color: #ffffff;
+                }
+            }
+            .forum__info {
+                width: 100%;
+                height: auto;
+                padding-top: 15px;
+                & img {
+                    display: block;
+                    width: 90%;
+                    margin: auto;
+                    height: 250px;
+                }
+                .forum__desc {
+                    width: 90%;
+                    height: auto;
+                    margin: auto;
+                    padding: 25px 15px;
+                    & p {
+                        font: $basic-font;
+                        color: #000000;
+                        text-align: justify;
+                        line-height: 1.5;
+                    }
+                }
+            }
+        }
+        .pandogplus__chat {
+            float: right;
+            @include screen($phone, $tablet) {
+                display: block;
+                width: 100%;
+                margin: 0 auto 25px;
+            }
+            @include max-screen($phone) {
+                display: block;
+                width: 100%;
+                margin: 0 auto 25px;
+            }
+        }
+    }
+}

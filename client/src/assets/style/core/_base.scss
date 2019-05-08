@@ -1,0 +1,100 @@
+html {
+    min-height: 300px;
+    height: 1px;
+    /* Required to make the child 100% of the min-height */
+    overflow-x: hidden;
+    font-size: 18px;
+    body {
+        overflow-x: hidden;
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    box-sizing: border-box;
+    @include min-screen($desktop) {
+        font-size: 18px;
+        color: #000000;
+    }
+    @include screen($tablet-wide, $desktop) {
+        font-size: 16px;
+        color: red;
+    }
+    @include screen($tablet, $tablet-wide) {
+        font-size: 16px;
+        color: blue;
+    }
+    @include screen($phone, $tablet) {
+        font-size: 16px;
+        color: yellow;
+    }
+    @include max-screen($phone) {
+        font-size: 16px;
+        color: rebeccapurple;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+}
+
+button {
+    outline: none;
+}
+
+.menu {
+    list-style: none;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+pd-header[_ngcontent-c0] {
+    display: inline-block;
+    width: 100%;
+    height: 200px;
+    background: url(./assets/image/header/headerbackground.jpg) no-repeat 0 -10px;
+    background-size: cover;
+    @include screen($phone, $tablet) {
+        height: 450px;
+    }
+}

@@ -1,0 +1,59 @@
+<section class='subject'>
+    <div class="subject__wrapper">
+        <div class="subject__header">
+            <img src="../../../../../assets/image/pandogpl/fpeople.png" alt="logo subject">
+            <a class="back__arrow" routerLink='/store/forum'></a>
+            <div class="subject__header-info">
+                <h1>{{subject.subjectName}}</h1>
+                <h5>created by {{subject.authorLogin}}</h5>
+            </div>
+            <button class="btn message__create modal-trigger " data-modal="modal-name">Write</button>
+        </div>
+
+        <div class="upperblock__messages">
+            <p>In this subject are {{ subjectMessages.length}} messages</p>
+        </div>
+        <div class="messages__block">
+            <div class="messages__card" *ngFor='let message of subjectMessages; index as i;'>
+                <div class="messages__header">
+                    <span class="message__author">{{message.authorLogin}}</span>
+                    <span class="message__number">#{{i+1}}</span>
+                </div>
+                <div class="messages__body">
+                    <div class="messages__left-block">
+                        <div class="message__avatar-inner">
+                            <img src="./../../../../../assets/image/pandogpl/messageavatar.png" alt="avatar">
+                        </div>
+                    </div>
+                    <div class="messages__right-block">
+                        <p class="message__date">Publicated on {{message.createdAt}}</p>
+                        <p class="message__text">{{message.content}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Modal. Create subject -->
+<div class="modal" id="modal-name">
+    <div class="modal-sandbox"></div>
+    <div class="modal-box">
+        <div class="modal-header">
+            <div class="close-modal">&#10006;</div>
+            <h1>Write message</h1>
+        </div>
+        <div class="modal-body">
+            <form novalidate #f="ngForm" (ngSubmit)='writeMessage(f)'>
+                <label for="createmessage">Enter message text</label>
+                <textarea [(ngModel)]='textareaMessage' name="createmessage" required></textarea>
+
+                <div class="but__inner">
+                    <button class="submit__sub" type="submit">Create</button>
+                    <button class="close-modal-b">Close!</button></div>
+            </form>
+            <br />
+        </div>
+    </div>
+</div>

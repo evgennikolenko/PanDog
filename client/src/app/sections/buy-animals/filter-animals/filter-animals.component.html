@@ -1,0 +1,63 @@
+<div class="toolbar__wrapper">
+
+    <div class="toolbar__search">
+        <div class="toolbar__searchInner">
+            <input [(ngModel)]='search' type="text" placeholder="search" (input)='filterSearch(search)'>
+        </div>
+
+        <div class="toolbar__searchImage"></div>
+    </div>
+
+    <fieldset class="toolbar__money">
+        <div class="toolbar__moneyInner">
+            <div class="toolbar__moneyText">Max-money: {{rangeMoney}} $</div>
+            <input [(ngModel)]='rangeMoney' (change)='filterMoney(rangeMoney)' name="flevel" id="flying" type="range" min="0" max="10000" value="0" step="100">
+        </div>
+    </fieldset>
+
+
+    <fieldset class="toolbar__type">
+        <legend>type</legend>
+        <div class="toolbar__typeInner">
+            <div *ngFor='let item of getTypesAnimals()' class="toolbar__type-block">
+                <label>
+                                <input id="r1" #type type="radio" class="option-input radio" name="typeFilter" value="{{item}}" (change)='filterType(type)'>
+                                <span> {{item}}</span>                         
+                            </label>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="toolbar__breed" *ngIf='showBreedsInTempl'>
+        <legend>breed</legend>
+        <div class="toolbar__breedInner">
+            <div *ngFor='let item of breedsSet'>
+                <div class="toolbar__breed-block">
+                    <label>
+                                <input #breed type="radio" class="option-input radio" name="typeFilter" value="{{item}}" (change)='filterBreed(breed)'>
+                                <span> {{item}}</span>
+                                </label>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="toolbar__fullsearch">
+        <legend>search</legend>
+        <div class="toolbar__fullsearchInner">
+            <span class="fullsearch-input">
+                            <input type="text" [(ngModel)]='typeAnimal' value="type" placeholder="type">
+                    </span>
+
+            <span class="fullsearch-input">
+                        <input type="text" [(ngModel)]='breedAnimal' value="breed" placeholder="breed">
+                    </span>
+
+            <span class="fullsearch-input">
+                            <input type="number" [(ngModel)]='moneyAnimal' value="max money" placeholder="max money">
+                    </span>
+
+            <button (click)='fullSearch(typeAnimal, breedAnimal, moneyAnimal )'>Search</button>
+        </div>
+    </fieldset>
+</div>

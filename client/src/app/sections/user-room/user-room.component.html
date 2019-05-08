@@ -1,0 +1,40 @@
+<section class="userRoom">
+    <div class="userRoom__wrapper">
+        <div class="userRoom__left">
+            <img src="./../../../assets/image/main/roomavatar.png">
+            <h5 class="userRoom__login">{{currentUser.login}}</h5>
+        </div>
+
+        <div class="userRoom__right">
+            <h2 class="userRoom__userName">{{currentUser.lastName}} {{currentUser.firstName}}</h2>
+            <p class="userRoom__email">{{currentUser.email}}</p>
+
+            <!--<div class="userRoom__orders">-->
+                <!--<h3>Your orders:</h3>-->
+
+                <!--<div class="orders__inner" *ngFor='let orders of userOrders; let i = index'>-->
+                    <!--<p>Order # {{i+1}}</p>-->
+
+                    <!--<ul>-->
+                        <!--<li *ngFor='let order of orders.items'>-->
+                            <!--<img src="{{order.product.src}}" width="50px" height="50px">-->
+                            <!--<span>{{order.product.type}}</span>-->
+                            <!--<span>{{order.product.breed}}</span>-->
+                            <!--<span class="order__cost">{{order.product.cost * order.quantity}}$</span>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <div class="userRoom__subjects">
+                <h3>Your subjects in forum:</h3>
+                <ul>
+                    <li *ngFor='let sub of userSubjects'>
+                        <a [routerLink]="['/store/forum/', sub._id]">{{sub.subjectName}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>

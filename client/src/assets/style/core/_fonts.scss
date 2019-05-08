@@ -1,0 +1,10 @@
+@include font-face("Underdog", "src/assets/fonts/Underdog/Underdog");
+@include font-face("RuslanDisplay", "src/assets/fonts/RuslanDisplay/RuslanDisplay");
+@include font-face("MarckScript", "src/assets/fonts/MarckScript/MarckScript");
+@include font-face("HelveticaNeueCyrBold", "src/assets/fonts/HelveticaNeueCyr-Bold/HelveticaNeueCyr-Bold");
+@include font-face("HelveticaNeueCyrLight", "src/assets/fonts/HelveticaNeueCyr-Light/HelveticaNeueCyr-Light");
+@include font-face("Lora-Bold", "src/assets/fonts/Lora-Bold/Lora-Bold");
+@include font-face("VarelaRound-Regular", "src/assets/fonts/VarelaRound-Regular/VarelaRound-Regular");
+h1 {
+    font-family: "HelveticaNeueCyr-Medium";
+}

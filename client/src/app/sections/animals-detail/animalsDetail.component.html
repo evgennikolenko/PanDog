@@ -1,0 +1,84 @@
+<div class="animals-detail">
+    <div class="animals-detail__wrapper">
+        <div class="animals-detail__left">
+            <div class="animals-detail__header">
+                <div class="animals-detail__name">Detail for: {{animal.type}}</div>
+            </div>
+            <div class="animals-detail__body">
+                <div class="animals-detail__slider">
+                    <!--<div class="carousel">-->
+                        <!--<ul class="slides">-->
+
+                            <!--<li #list id='list-carousel'>-->
+                                <!--&lt;!&ndash; <h2>{{animal.type}}</h2> &ndash;&gt;-->
+                                <!--<img src="{{animal.photos[0]}}" alt="lel">-->
+                            <!--</li>-->
+                            <!--<li #list>-->
+                                <!--&lt;!&ndash; <h2>{{animal.type}}</h2> &ndash;&gt;-->
+                                <!--<img src="{{animal.photos[1]}}" alt="pek">-->
+                            <!--</li>-->
+
+                            <!--<li #list>-->
+                                <!--&lt;!&ndash; <h2>{{animal.type}}</h2> &ndash;&gt;-->
+                                <!--<img src="{{animal.photos[2]}}" alt="trt">-->
+                            <!--</li>-->
+
+                        <!--</ul>-->
+                        <!--<div (click)='right()'>RIGHT</div>-->
+                    <!--</div>-->
+                </div>
+
+                <div class="animals-detail__info">
+                    <p><b>Breed:</b> {{animal.breed}}</p>
+                    <p><b>Code:</b> {{animal.id}}</p>
+                    <p><b>Availability:</b> <span [ngStyle]='{"color": availableAnimal==="In stoke" ? "green" : "red" }'>{{availableAnimal}}</span></p>
+                    <p>Available for self-delivery in : {{animal.location}}</p>
+                    <p>Discount : {{animal.discount}}%</p>
+                    <div class="animals-detail__cost">{{animal.cost * count}} $</div>
+
+                    <div class="animals-detail__buttons">
+                        <div class="animal_count">
+                            <div class="minus" (click)='subtraction()'><span>-</span></div>
+                            <input [(ngModel)]='count' type="number" class="count" />
+                            <div class="plus" (click)='increase()'><span>+</span></div>
+                        </div>
+                        <a class="incart-button" (click)='this.addProductToCart(animal, count)'>
+                            <div></div>
+                            <span>In cart</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="animals-detail__right">
+            <a href="https://www.parimatch.com/" target="_blank">
+                <img src="../../../assets/image/product/parimatch.gif">
+            </a>
+        </div>
+
+        <div class="animals-detail__footer">
+            <div class="animals-detail__fnav">
+                <a (click)='contentShow("desc")'>Subscribtion</a>
+                <a (click)='contentShow("rew")'>Rewiews</a>
+            </div>
+            <div *ngIf='showContent==="desc"' class="animals-detail__infoblock">
+                This is <b>{{animal.type}}</b>. Breed : {{animal.breed}}
+                <br>
+                <b>Age:</b> {{animal.age}}
+                <br> Now located in : {{animal.location}}
+                <!--<br> {{animal.desc}}-->
+            </div>
+            <!--<div *ngIf='showContent==="rew"' class="animals-detail__infoblock">-->
+
+                <!--<div class="animals__reviews" *ngFor='let rev of animal.reviews'>-->
+                    <!--<div class="animals__reviews-name">{{rev.name}}</div>-->
+                    <!--<div class="animals__reviews-date">{{rev.date}}</div>-->
+                    <!--<div class="animals__reviews-message">{{rev.message}}</div>-->
+
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+
+    </div>
+</div>

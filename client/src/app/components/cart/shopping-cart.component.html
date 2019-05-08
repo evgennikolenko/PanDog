@@ -1,0 +1,14 @@
+<div class="cart">
+    <div class="cart__wrapper">
+        <div class="cart__cart">
+            <div class="cart__count">{{itemCount}}</div>
+        </div>
+        <div class="cart__cost" [ngStyle]="{'display': this.grossTotal > 0 ? 'inline-block' : 'none' }">{{this.grossTotal}} $</div>
+        <div class="cart__clean">
+            <a (click)="this.emptyCart()" [attr.disabled]="itemCount === 0 ? true : null"></a>
+        </div>
+        <div class="cart__checkout">
+            <a routerLink="/store/product/checkout" [attr.disabled]="itemCount === 0 ? true : null"></a>
+        </div>
+    </div>
+</div>

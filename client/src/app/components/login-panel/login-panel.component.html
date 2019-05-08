@@ -1,0 +1,17 @@
+<div class="login-panel">
+    <div class="login-panel__buttons" *ngIf='!isAuth'>
+        <div class="login-panel__blogin">
+            <a routerLink='/store/login'>login</a>
+        </div>
+        <div class="login-panel__bregistration">
+            <a routerLink='/store/registration'>registration</a>
+        </div>
+    </div>
+    <div class="login-panel__main" *ngIf='isAuth'>
+        <div class="login-panel__user">
+            <p>{{current.firstName}} {{current.lastName}}</p>
+        </div>
+        <div class="exit__button" (click)="logout()"><a>Exit</a></div>
+    </div>
+
+</div>

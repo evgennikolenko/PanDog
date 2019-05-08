@@ -1,0 +1,362 @@
+.animals {
+    width: 100%;
+    min-height: 500px;
+    background: #e9e9e9;
+    // background: yellow;
+    .animals__wrapper {
+        @include containerMargin();
+        height: auto;
+        height: inherit;
+        // background: turquoise;
+        .animals__header {
+            width: 100%;
+            height: 80px;
+            padding: 10px 0 0 10px;
+            border-bottom: 1px solid gray;
+            & img {
+                width: 50px;
+                height: 50px;
+                display: inline-block;
+            }
+            & h2 {
+                font: $basic-title-font;
+                color: #000;
+                display: inline-block;
+                font-size: 45px;
+            }
+        }
+        .animals__toolbar {
+            width: 18%;
+            height: auto;
+            display: inline-block;
+            vertical-align: top;
+            background: #e9e9e9;
+            @include screen($tablet, $tablet-wide) {
+                width: 350px;
+                display: block;
+                margin: auto;
+            }
+            @include screen($phone, $tablet) {
+                width: 350px;
+                display: block;
+                margin: auto
+            }
+            @include max-screen($phone) {
+                width: 100%;
+                display: block;
+                margin: auto
+            }
+        }
+        //////////////////////////////////////////////////////////////
+        .animals__layout {
+            width: 79%;
+            height: auto;
+            display: inline-block;
+            vertical-align: top;
+            @include screen($tablet, $tablet-wide) {
+                width: 100%;
+            }
+            @include screen($phone, $tablet) {
+                width: 100%;
+            }
+            @include max-screen($phone) {
+                width: 100%;
+            }
+            .animals__nav {
+                width: 100%;
+                height: 60px;
+                padding: 10px 0 0 20px;
+                ///////////////////////////////////////////////////////////////
+                .select__orderBy {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    -ms-appearance: none;
+                    appearance: none;
+                    outline: 0;
+                    box-shadow: none;
+                    border: 0 !important;
+                    color: #000000;
+                    background-image: none;
+                }
+                /* Custom Select */
+                .select__orderBy {
+                    position: relative;
+                    display: inline-block;
+                    width: 10em;
+                    height: 30px;
+                    line-height: 1.8;
+                    background: #000000;
+                    overflow: hidden;
+                    border-radius: .25em;
+                    vertical-align: top;
+                }
+                select {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    padding: 0 0 0 .5em;
+                    color: #000000;
+                    cursor: pointer;
+                    background: rgb(255, 250, 250);
+                    border: 1px solid #000000;
+                    vertical-align: top;
+                }
+                select::-ms-expand {
+                    display: none;
+                }
+                /* Arrow */
+                .select__orderBy::after {
+                    content: '\25BC';
+                    position: absolute;
+                    top: 1px;
+                    right: 1px;
+                    height: 28px;
+                    bottom: 0;
+                    padding: 0 1em;
+                    background: #63707e;
+                    pointer-events: none;
+                }
+                /* Transition */
+                .select__orderBy:hover::after {
+                    color: #ffffff;
+                }
+                .select__orderBy::after {
+                    -webkit-transition: .25s all ease;
+                    -o-transition: .25s all ease;
+                    transition: .25s all ease;
+                }
+                /////////////////////////////////////////////////
+                .orderBy__buttons {
+                    display: inline-block;
+                    vertical-align: top;
+                    width: 90px;
+                    height: 30px;
+                    .orderBy__ascendingT {
+                        width: 40px;
+                        height: 30px;
+                        display: inline-block;
+                        background: url(./assets/image/product/arrowssprite.png) no-repeat -100px -2px;
+                        background-size: 145px 100px;
+                    }
+                    .orderBy__ascendingF {
+                        width: 40px;
+                        height: 30px;
+                        display: inline-block;
+                        background: url(./assets/image/product/arrowssprite.png) no-repeat -52px -2px;
+                        background-size: 145px 100px;
+                    }
+                }
+                /***********************************************************/
+                .select__productsPerPage {
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    -ms-appearance: none;
+                    appearance: none;
+                    outline: 0;
+                    box-shadow: none;
+                    border: 0 !important;
+                    color: #000000;
+                    background-image: none;
+                }
+                .select__productsPerPage {
+                    position: relative;
+                    display: inline-block;
+                    width: 10em;
+                    height: 30px;
+                    line-height: 1.8;
+                    background: #000000;
+                    overflow: hidden;
+                    border-radius: .25em;
+                    vertical-align: top;
+                }
+                select {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    padding: 0 0 0 .5em;
+                    color: #000000;
+                    cursor: pointer;
+                    background: rgb(255, 250, 250);
+                    border: 1px solid #000000;
+                    vertical-align: top;
+                }
+                select::-ms-expand {
+                    display: none;
+                }
+                /* Arrow */
+                .select__productsPerPage::after {
+                    content: '\25BC';
+                    position: absolute;
+                    top: 1px;
+                    right: 1px;
+                    height: 28px;
+                    bottom: 0;
+                    padding: 0 1em;
+                    background: #63707e;
+                    pointer-events: none;
+                }
+                /* Transition */
+                .select__productsPerPage:hover::after {
+                    color: #ffffff;
+                }
+                .select__productsPerPage::after {
+                    -webkit-transition: .25s all ease;
+                    -o-transition: .25s all ease;
+                    transition: .25s all ease;
+                }
+            }
+            .page-btn-group {
+                float: right;
+                padding: 0 10px 0 0;
+                & button {
+                    margin-left: 5px;
+                    border: 1px solid #160f1d
+                }
+            }
+            ////////////////////////////////////////////////
+            .animals__grid {
+                width: 100%;
+                min-height: 350px;
+                .animals__card {
+                    box-sizing: border-box;
+                    width: 200px;
+                    padding-top: 10px;
+                    height: 315px;
+                    display: inline-block;
+                    margin: 10px 16px 10px 10px;
+                    border: 2px solid #9a9a9a;
+                    border-radius: 13px;
+                    background: #ffffff;
+                    position: relative;
+                    &:hover {
+                        -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 9, 1);
+                        -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 9, 1);
+                        box-shadow: 0px 0px 15px 0px rgba(0, 0, 9, 1);
+                    }
+                    .animals__discount {
+                        background: url(./assets/image/product/discount.png) no-repeat;
+                        background-size: contain;
+                        width: 70px;
+                        height: 70px;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        & p {
+                            text-align: center;
+                            margin-top: 22px;
+                            font: $underdog;
+                            font-size: 25px;
+                            margin-left: 10px;
+                            font-weight: 600;
+                            color: #ffffff;
+                        }
+                    }
+                    .animals-card__image {
+                        width: 160px;
+                        height: 155px;
+                        margin: auto;
+                        & img {
+                            width: inherit;
+                            height: inherit;
+                        }
+                    }
+                    .animals-card__type {
+                        width: auto;
+                        height: 30px;
+                        margin: auto;
+                        text-align: center;
+                        font: $basic-font;
+                        font-size: 16px;
+                        padding-top: 5px;
+                    }
+                    .animals-card__breed {
+                        @extend .animals-card__type;
+                    }
+                    .animals-card__cost {
+                        width: 120px;
+                        height: 29px;
+                        font-size: 16px;
+                        text-align: center;
+                        border: 2px solid grey;
+                        border-radius: 8px;
+                        margin: 1px auto;
+                        padding-top: 7px;
+                        font-family: 'HelveticaNeueCyrMedium', sans-serif;
+                    }
+                    .animals-card__footer {
+                        width: 200px;
+                        height: 43px;
+                        position: relative;
+                        margin-top: 10px;
+                        .animals-card__like {
+                            display: inline-block;
+                            vertical-align: top;
+                            width: 40px;
+                            height: inherit;
+                        }
+                        .animals-card__info {
+                            @extend .animals-card__like;
+                            width: 50px;
+                            margin: 0 5px 0 5px;
+                            .animals-card__infobnt {
+                                background: #ffffff;
+                                color: black;
+                                width: 95%;
+                                height: 95%;
+                                border: 1px solid;
+                                border-color: #eea236;
+                                border-radius: 10px;
+                                &:hover {
+                                    background: #eea236;
+                                }
+                                & div {
+                                    font-family: 'underdog';
+                                    font-size: 40px;
+                                    font-weight: 800;
+                                    height: 35px;
+                                    margin-top: -12px;
+                                    margin-left: -1px;
+                                }
+                            }
+                        }
+                        .animals-card__buy {
+                            @extend .animals-card__like;
+                            width: 80px;
+                            position: absolute;
+                            right: 10px;
+                            .animals-card__buybnt {
+                                width: 100%;
+                                height: inherit;
+                                position: relative;
+                                background-color: #ffffff;
+                                border-color: #4cae4c;
+                                border-radius: 10px;
+                                &:hover {
+                                    background: #349d44;
+                                }
+                                .btn__cart {
+                                    position: absolute;
+                                    left: 0;
+                                    height: 30px;
+                                    width: 35px;
+                                    background: url("../../../assets/image/product/cart.png") no-repeat;
+                                    background-size: contain;
+                                }
+                                & p {
+                                    display: block;
+                                    position: absolute;
+                                    right: 0;
+                                    font-family: 'underdog', sans-serif;
+                                    font-size: 20px;
+                                    font-weight: 600;
+                                    top: 9px;
+                                    width: 45px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

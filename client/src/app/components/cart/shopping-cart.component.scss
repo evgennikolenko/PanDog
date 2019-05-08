@@ -1,0 +1,71 @@
+.cart {
+    right: 5%;
+    width: auto;
+    height: 50px;
+    top: 130px;
+    border-radius: 50px;
+    background: beige;
+    .cart__wrapper {
+        height: inherit;
+        padding: 1px 10px 1px 5px;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: inherit;
+        .cart__cart {
+            display: inline-block;
+            width: 48px;
+            height: 48px;
+            margin: 1px 0 0 11px;
+            background: url(./assets/image/cart/shoppingcart.png) no-repeat;
+            background-size: contain;
+            position: relative;
+            .cart__count {
+                position: absolute;
+                width: 10px;
+                height: 18px;
+                right: 6px;
+                top: 1px;
+                font: $underdog;
+                font-size: 16px;
+                font-weight: 600;
+                color: white;
+            }
+        }
+        .cart__cost {
+            display: inline-block;
+            height: 50px;
+            font: 15px "Underdog", sans-serif;
+            font-weight: 600;
+            color: #ffffff;
+            width: auto;
+            height: 30px;
+            top: -15px;
+            margin-left: 5px;
+            position: relative;
+            padding: 6px;
+            border-radius: 25px;
+            background: #000000;
+        }
+        .cart__clean {
+            @extend .cart__cart;
+            background: url(./assets/image/cart/delete.png) no-repeat;
+            background-size: contain;
+            & a {
+                width: 48px;
+                height: 48px;
+                display: inline-block;
+                cursor: pointer;
+            }
+        }
+        .cart__checkout {
+            @extend .cart__cart;
+            background: url(./assets/image/cart/arrownext.png) no-repeat;
+            background-size: contain;
+            & a {
+                width: 48px;
+                height: 48px;
+                display: inline-block;
+                cursor: pointer;
+            }
+        }
+    }
+}

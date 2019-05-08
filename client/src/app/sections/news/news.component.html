@@ -1,0 +1,41 @@
+<section class="news">
+    <div class="news__wrapper">
+        <div class="news__section">
+
+            <div class="news__card" *ngFor="let item of worldNews | slice:first:last">
+                <a href={{item.url}} target="_blank" class="news-card__image">
+                    <img src={{item.urlToImage}}>
+                    <div class="news-card__link">
+                        <div>Read more &#8594;</div>
+                    </div>
+                </a>
+
+                <div class="news-card__info">
+                    <div class="news-card__header">
+
+                        <div class="news-card__text">
+                            {{item.title}}
+                        </div>
+                        <div class="news-card__date">
+                            Published at: {{item.publishedAt | date:' HH:mm a dd.MM.yyyy' | lowercase }}
+                        </div>
+                    </div>
+                    <div class="news-card__body">
+                        <div class="news-card__desc">
+                            {{item.description}}
+                        </div>
+                        <div class="news-card__author" *ngIf="item.author">Author: {{item.author}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-btn-group">
+        <input #l1 type="button" value="1" (click)="selectPage(l1)">
+        <input #l2 type="button" value="2" (click)="selectPage(l2)">
+        <input #l3 type="button" value="3" (click)="selectPage(l3)">
+        <input #l4 type="button" value="4" (click)="selectPage(l4)">
+        <input #l5 type="button" value="5" (click)="selectPage(l5)">
+    </div>
+</section>

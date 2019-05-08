@@ -1,0 +1,116 @@
+// =============================================================================
+// Font Face
+// =============================================================================
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+    @font-face {
+        font-family: $font-family;
+        font-weight: $weight;
+        font-style: $style;
+        /* IE9 Compat Modes */
+        src: url('#{$file-path}.eot');
+        /* IE6-IE8 */
+        src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+        /* Pretty Modern Browsers */
+        url('#{$file-path}.woff') format('woff'),
+        /* Safari, Android, iOS */
+        url('#{$file-path}.ttf') format('truetype'),
+        /* Legacy iOS */
+        url('#{$file-path}.svg') format('svg');
+    }
+}
+
+@mixin containerMargin() {
+    max-width: 1148px;
+    height: auto;
+    margin: auto;
+}
+
+%clearfix {
+    *zoom: 1;
+    &:after {
+        content: '';
+        display: table;
+        line-height: 0;
+        clear: both;
+    }
+}
+
+//responsive
+@function rem($px) {
+    @return $px / 16px+0rem;
+}
+
+@function proc($px) {
+    @return $px * 1% / 10.99px;
+}
+
+//  Author: Rafal Bromirski
+//  www: http://rafalbromirski.com/
+//  github: http://github.com/rafalbromirski/sass-mediaqueries
+//
+//  Licensed under a MIT License
+//
+//  Version:
+//  1.6.1
+// --- generator ---------------------------------------------------------------
+@mixin mq($args...) {
+    $media-type: 'only screen';
+    $media-type-key: 'media-type';
+    $args: keywords($args);
+    $expr: '';
+    @if map-has-key($args,
+    $media-type-key) {
+        $media-type: map-get($args, $media-type-key);
+        $args: map-remove($args, $media-type-key);
+    }
+    @each $key,
+    $value in $args {
+        @if $value {
+            $expr: "#{$expr} and (#{$key}: #{$value})";
+        }
+    }
+    @media only screen #{$expr} {
+        @content;
+    }
+}
+
+// --- screen ------------------------------------------------------------------
+@mixin screen($min,
+$max,
+$orientation: false) {
+    @include mq($min-width: $min, $max-width: $max, $orientation: $orientation) {
+        @content;
+    }
+}
+
+@mixin max-screen($max) {
+    @include mq($max-width: $max) {
+        @content;
+    }
+}
+
+@mixin min-screen($min) {
+    @include mq($min-width: $min) {
+        @content;
+    }
+}
+
+@mixin screen-height($min,
+$max,
+$orientation: false) {
+    @include mq($min-height: $min, $max-height: $max, $orientation: $orientation) {
+        @content;
+    }
+}
+
+@mixin max-screen-height($max) {
+    @include mq($max-height: $max) {
+        @content;
+    }
+}
+
+@mixin min-screen-height($min) {
+    @include mq($min-height: $min) {
+        @content;
+    }
+}

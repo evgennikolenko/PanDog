@@ -1,0 +1,319 @@
+.forum-component__title {
+    width: auto;
+    display: block;
+    text-align: center;
+    padding: 5px;
+    margin-top: -5px;
+    font: $lora;
+    background: #e0ebf1;
+    &::before {
+        display: inline-block;
+        content: '—';
+        width: 60px;
+        height: 40px;
+        margin: 30px auto 0;
+    }
+    &::after {
+        display: inline-block;
+        content: '—';
+        width: 60px;
+        height: 40px;
+        margin: 30px auto 0;
+    }
+}
+
+.forum {
+    width: 100%;
+    height: auto;
+    padding: 0 0 35px 0;
+    background: #e0ebf1;
+    .forum__wrapper {
+        @include containerMargin();
+        height: auto;
+        .create__subject {
+            display: inline-block;
+            width: auto;
+            height: 50px;
+            position: relative;
+            cursor: pointer;
+            &:hover {
+                &>p {
+                    text-decoration: underline;
+                }
+            }
+            & img {
+                width: 50px;
+                height: 50px;
+                left: 0;
+            }
+            & p {
+                display: inline-block;
+                vertical-align: top;
+                width: auto;
+                height: 50px;
+                padding: 14px 10px 5px 10px;
+                font: $nav-font;
+                font-size: 22px;
+            }
+        }
+        .forum__undertable {
+            width: 100%;
+            height: 35px;
+            background: #60707c;
+            margin-top: 5px;
+            & p {
+                color: #e9e9e9;
+                font: $basic-font;
+                padding: 10px 0 0 15px;
+                font-size: 17px;
+            }
+        }
+        .forum__table {
+            width: 100%;
+            height: auto;
+            border-collapse: collapse;
+            & td,
+            & th {
+                padding: 4px;
+                border: 1px solid #dde4eb;
+            }
+            .forum__colum {
+                background: #ffffff;
+                height: 35px;
+                .thead__theme {
+                    width: 70%;
+                    text-align: left;
+                    padding-left: 25px;
+                    font: $basic-font;
+                    font-size: 17px;
+                    font-weight: 300;
+                    color: #000;
+                    border: none;
+                }
+                .thead__answers {
+                    width: 10%;
+                    font: $basic-font;
+                    font-size: 17px;
+                    font-weight: 300;
+                    color: #000;
+                    border: none;
+                }
+                .thead__lastans {
+                    width: 19%;
+                    font: $basic-font;
+                    font-size: 17px;
+                    font-weight: 300;
+                    color: #000;
+                    border: none;
+                }
+                /***************************************************/
+                & td {
+                    height: 50px;
+                }
+                .forum__icon {
+                    padding: 5px;
+                    & img {
+                        width: 100%;
+                        height: 100%;
+                        @include screen($phone, $tablet) {
+                            display: none;
+                        }
+                        @include max-screen($phone) {
+                            display: none;
+                        }
+                    }
+                }
+                .forum__title {
+                    .title__subjectName {
+                        padding: 5px 0 0 0px;
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        @include screen($phone, $tablet) {
+                            width: 105%;
+                        }
+                        @include max-screen($phone) {
+                            width: 105%;
+                        }
+                        & p {
+                            font: $lora;
+                            font-size: 20px;
+                            color: #5682a3;
+                            padding-left: 15px;
+                            &:hover {
+                                color: #000000;
+                            }
+                            text-align: justify
+                        }
+                    }
+                    .title__authorLogin {
+                        padding: 5px 0 0 15px;
+                        font: $basic-font;
+                        font-size: 17px;
+                        color: #9e9e9e
+                    }
+                }
+                .forum__countMessages {
+                    text-align: center;
+                    font: $lora;
+                    font-size: 18px;
+                }
+                .forum__lastMessage {
+                    text-align: right;
+                    .lastMessage__date {
+                        font: $basic-font;
+                        padding: 5px 15px 0 0;
+                        color: #5682a3;
+                    }
+                    .lastMessage__authorLogin {
+                        font: $basic-font;
+                        padding: 5px 15px 0 0;
+                        font-size: 17px;
+                        color: #9e9e9e;
+                    }
+                }
+            }
+            .header__colum {
+                background: #fbfbfb;
+            }
+        }
+    }
+}
+
+
+/**********************************/
+
+.modal,
+.modal-box {
+    z-index: 900;
+}
+
+.modal-sandbox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, .8);
+    overflow: auto;
+}
+
+.modal-box {
+    position: relative;
+    width: 40%;
+    max-width: 350px;
+    margin: 100px auto;
+    animation-name: modalbox;
+    animation-duration: .3s;
+    animation-timing-function: ease-out;
+}
+
+.modal-header {
+    padding: 15px 40px;
+    background: #546E7A;
+    color: #ffffff;
+    font: $lora;
+    font-size: 20px;
+}
+
+.modal-body {
+    background: #ECEFF1;
+    padding: 15px 40px;
+    form {
+        width: 100%;
+        & label {
+            display: block;
+            text-align: center;
+            margin-bottom: 10px;
+            font: $basic-font;
+            color: #000000;
+        }
+        & textarea {
+            min-width: 200px;
+            display: block;
+            margin: auto;
+            height: auto;
+            font: $basic-font;
+            padding: 5px;
+        }
+        .but__inner {
+            width: 200px;
+            height: 70px;
+            padding: 15px;
+            margin-top: 10px;
+            margin: auto;
+            .close-modal-b {
+                display: inline-block;
+                padding: 6px 12px;
+                margin-bottom: 0;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1.42857143;
+                text-align: center;
+                white-space: nowrap;
+                vertical-align: middle;
+                -ms-touch-action: manipulation;
+                touch-action: manipulation;
+                cursor: pointer;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                background-image: none;
+                border: 1px solid transparent;
+                border-radius: 4px;
+                background: #d3c82a;
+                font: $nav-font;
+                &:hover {
+                    border: 1px solid #000000;
+                }
+            }
+            .submit__sub {
+                @extend .close-modal-b;
+                background: #449d44;
+                font: $nav-font;
+                &:hover {
+                    border: 1px solid #000000;
+                }
+            }
+        }
+    }
+}
+
+.close-modal {
+    text-align: right;
+    cursor: pointer;
+}
+
+@-webkit-keyframes modalbox {
+    0% {
+        top: -250px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes modalbox {
+    0% {
+        top: -250px;
+        opacity: 0;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
